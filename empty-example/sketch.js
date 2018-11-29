@@ -32,20 +32,14 @@ function draw() {
 
 function mouseClicked(){
   for(var i = 0; i < bBoxN.length; i++){
-    if(mouseX > bBoxX[i]){
-      if(mouseX < bBoxX[i]+25){
-        if(mouseY > bBoxY[i]){
-          if(mouseY < bBoxY[i]+25){
-            console.log(bBoxN[i]);
-            if(bBoxF[i] == 255){
-              bBoxF[i] = 125;
-            }else {
-              bBoxF[i]= 255;
-            }
-            break;
-          }
-        }
+    if((mouseX > bBoxX[i])&&(mouseX < bBoxX[i]+25)&&(mouseY > bBoxY[i])&&(mouseY < bBoxY[i]+25)){
+      console.log(bBoxN[i]);
+      if(bBoxF[i] == 255){
+        bBoxF[i] = 125;
+      }else {
+        bBoxF[i]= 255;
       }
+      break
     }
   }
 }
